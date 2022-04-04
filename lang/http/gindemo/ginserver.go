@@ -33,7 +33,7 @@ func main() {
 
 	r.GET("/ping", func(c *gin.Context) {
 		h := gin.H{
-			"message":   "pong",
+			"message": "pong",
 		}
 		if rid, exists := c.Get(keyRequestId); exists {
 			h[keyRequestId] = rid
