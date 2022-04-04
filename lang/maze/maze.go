@@ -23,6 +23,7 @@ func readMaze(filename string) [][]int { // 从磁盘读取地图
 			fmt.Fscanf(file, "%d", &maze[i][j])
 		}
 	}
+	file.Close()
 	return maze
 }
 
