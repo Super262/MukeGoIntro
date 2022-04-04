@@ -25,7 +25,7 @@ func main() {
 			zap.String("path", c.Request.URL.Path),
 			zap.Int("status", c.Writer.Status()),
 			zap.Duration("elapsed", time.Now().Sub(s)))
-	}, func(c *gin.Context) {
+	}, func(c *gin.Context) { // 中间件可以向context添加数据
 		c.Set(keyRequestId, rand.Int())
 
 		c.Next()
